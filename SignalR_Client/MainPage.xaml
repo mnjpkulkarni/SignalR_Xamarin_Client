@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SignalR_Client" x:Class="SignalR_Client.MainPage">
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome To Chatroom." TextColor="Black" HorizontalTextAlignment="Center"/>
+        <StackLayout Orientation="Horizontal">
+            <Entry x:Name="nameEntry" Placeholder="Enter your name.." HorizontalOptions="StartAndExpand"/>
+            <Button Text="Done" Clicked="Handle_Clicked_1"/>
+        </StackLayout>
+        <ListView x:Name="chatList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding name}" Detail="{Binding message}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Entry x:Name="messageEntry" Placeholder="Enter your message..."/>
+        <Button x:Name="connectToHubButton" Text="Send Message" Clicked="Handle_Clicked"/>
+    </StackLayout>
+</ContentPage>
